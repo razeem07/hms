@@ -1,0 +1,95 @@
+{%extends 'administrator/shared/base.html' %} {% block content %}
+
+<h1></h1>
+
+<div class="bg-white p-6 rounded-lg shadow">
+  <h2 class="text-xl font-semibold mb-4">Health Packages</h2>
+
+  <div class="overflow-x-auto">
+    <table class="min-w-full border border-gray-200">
+      <thead class="bg-gray-100">
+        <tr>
+          <th
+            class="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b"
+          >
+            Sl.No
+          </th>
+
+          <th
+            class="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b"
+          >
+            Image
+          </th>
+          <th
+            class="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b"
+          >
+         Package Name
+          </th>
+          <th
+            class="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b"
+          >
+            Slug
+          </th>
+
+          <th
+            class="py-3 px-4 text-left text-sm font-semibold text-gray-600 border-b"
+          >
+            Description
+          </th>
+          <th
+            class="py-3 px-4 text-center text-sm font-semibold text-gray-600 border-b"
+          >
+            Action
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for object in object_list %}
+        <tr class="hover:bg-gray-50">
+          <td class="py-3 px-4 border-b">{{object.id}}</td>
+          <td class="py-3 px-4 border-b">
+            <img
+              src="{{ object.image.url }}"
+              alt="{{ object.name }}"
+              class="w-16 h-16 object-cover rounded"
+            />
+          </td>
+          <td class="py-3 px-4 border-b">{{object.name}}</td>
+          <td class="py-3 px-4 border-b">{{object.slug}}</td>
+          <td class="py-3 px-4 border-b">{{object.description}}</td>
+
+          <td class="py-3 px-4 border-b text-center space-x-2">
+            <a
+              href="{% url 'administrator:package_update' id=object.id %}"
+              class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600 transition"
+            >
+              Edit
+            </a>
+            <a
+              href="{% url 'administrator:package_delete' id=object.id %}"
+              class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition"
+              onclick="return confirm('Are you sure want to delete this?')"
+            >
+              Delete
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+
+        <!---- <tr class="hover:bg-gray-50">
+          <td class="py-3 px-4 border-b">Jane</td>
+          <td class="py-3 px-4 border-b">Smith</td>
+          <td class="py-3 px-4 border-b">+91 99887 66554</td>
+          <td class="py-3 px-4 border-b">jane@samplemail.com</td>
+          <td class="py-3 px-4 border-b">Requesting a callback</td>
+          <td class="py-3 px-4 border-b text-center space-x-2">
+            <button class="bg-blue-500 text-white px-3 py-1 rounded text-sm hover:bg-blue-600 transition">View</button>
+            <button class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600 transition">Delete</button>
+          </td>
+        </tr>-->
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock content %}

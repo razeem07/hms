@@ -1,0 +1,155 @@
+{% extends 'user/base.html' %} {% block header %}
+
+<title>Home</title>
+
+{% endblock header %} {% block content %}
+
+<!-- Full Width Slider -->
+<div class="relative w-full overflow-hidden">
+  <!-- Slides Container -->
+  <div class="flex transition-transform duration-700 ease-in-out" id="slider">
+    <!-- Slide 1 -->
+    <div class="w-full flex-shrink-0 relative">
+      <img
+        src="https://images.unsplash.com/photo-1588776814546-9c3a0c451cc3?auto=format&fit=crop&w=1600&q=80"
+        class="w-full h-[500px] object-cover rounded-b-3xl"
+        alt="Hospital Image 1"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-30">
+        <div
+          class="container mx-auto h-full flex items-center justify-center px-4 sm:px-6 md:px-12"
+        >
+          <div
+            class="text-center uppercase max-w-full sm:max-w-lg md:max-w-2xl"
+          >
+            <p
+              class="text-white mb-2 text-[20px] sm:text-[22px] md:text-[24px] font-semibold"
+            >
+              Quality healthcare for you and your family
+            </p>
+            <h2
+              class="text-white text-[32px] sm:text-[40px] md:text-[48px] font-semibold"
+            >
+              Welcome to VSM Multispeciality Hospital
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="w-full flex-shrink-0 relative">
+      <img
+        src="https://images.unsplash.com/photo-1588776814551-1c2c5489d6a2?auto=format&fit=crop&w=1600&q=80"
+        class="w-full h-[500px] object-cover rounded-b-3xl"
+        alt="Hospital Image 2"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-30">
+        <div
+          class="container mx-auto h-full flex items-center justify-start pl-12"
+        >
+          <div class="text-justify text-white max-w-lg uppercase">
+            <p class="mb-2 text-lg">
+              Quality healthcare for you and your family
+            </p>
+            <h2 class="text-4xl font-bold">
+              Welcome to VSM Multispeciality Hospital
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="w-full flex-shrink-0 relative">
+      <img
+        src="https://images.unsplash.com/photo-1588776814560-9d3e0c451bb6?auto=format&fit=crop&w=1600&q=80"
+        class="w-full h-[500px] object-cover rounded-b-3xl"
+        alt="Hospital Image 3"
+      />
+      <div class="absolute inset-0 bg-black bg-opacity-30">
+        <div
+          class="container mx-auto h-full flex items-center justify-end pr-16"
+        >
+          <div class="text-justify text-white max-w-lg uppercase">
+            <p class="mb-2 text-lg">
+              Quality healthcare for you and your family
+            </p>
+            <h2 class="text-4xl font-bold">
+              Welcome to VSM Multispeciality Hospital
+            </h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left Arrow -->
+  <button
+    class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 text-gray-800 rounded-full p-2"
+    id="prev"
+  >
+    &#10094;
+  </button>
+
+  <!-- Right Arrow -->
+  <button
+    class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-80 text-gray-800 rounded-full p-2"
+    id="next"
+  >
+    &#10095;
+  </button>
+</div>
+
+<!-- Boxed Blue Section with Overlapping Image -->
+<section
+  class="bg-blue-200 rounded-xl max-w-7xl mx-auto px-6 py-16 relative -mt-16"
+>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <!-- Left Column: Image -->
+    <div class="relative">
+      <img
+        src="https://media.istockphoto.com/id/2154136132/photo/confident-spanish-young-businesswoman-in-suit-holds-phone-reading-message-against-huge.jpg?s=2048x2048&w=is&k=20&c=G4Oc3QEUTUlWzN2CfT7OTxL-9jCDJW0F17dXszxLeA8="
+        alt="Sample"
+        class="w-full rounded-xl md:-mt-32 shadow-lg"
+      />
+    </div>
+
+    <!-- Right Column: Content -->
+    <div class="space-y-4">
+      <h3 class="text-2xl font-semibold text-gray-800">Sample Content Title</h3>
+      <p class="text-gray-700 text-lg">
+        This is some sample text for the right column. You can replace this with
+        icons, text, or anything else.
+      </p>
+      <p class="text-gray-700 text-lg">
+        Add more content here as needed for your design layout.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const slider = document.getElementById("slider");
+  const slides = slider.children;
+  const totalSlides = slides.length;
+  let index = 0;
+
+  document.getElementById("next").addEventListener("click", () => {
+    index = (index + 1) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  document.getElementById("prev").addEventListener("click", () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+  // Auto-slide
+  setInterval(() => {
+    index = (index + 1) % totalSlides;
+    slider.style.transform = `translateX(-${index * 100}%)`;
+  }, 5000);
+</script>
+
+{% endblock content %}

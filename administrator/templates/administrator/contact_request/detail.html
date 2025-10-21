@@ -1,0 +1,57 @@
+{%extends 'administrator/shared/base.html' %} {% block content %}
+
+<div class="bg-white rounded-lg shadow p-6 max-w-2xl mx-auto mt-8 w-1/2">
+  <h1 class="text-2xl font-semibold text-gray-800 mb-6 border-b pb-3">
+    Contact Request Details
+  </h1>
+
+  <div class="space-y-4 text-gray-700">
+    <div class="flex justify-between">
+      <p class="font-medium">ID:</p>
+      <p>{{ object.id }}</p>
+    </div>
+
+    <div class="flex justify-between">
+      <p class="font-medium">First Name:</p>
+      <p>{{ object.first_name }}</p>
+    </div>
+
+    <div class="flex justify-between">
+      <p class="font-medium">Last Name:</p>
+      <p>{{ object.last_name }}</p>
+    </div>
+
+    <div class="flex justify-between">
+      <p class="font-medium">Phone Number:</p>
+      <p>{{ object.phone_number }}</p>
+    </div>
+
+    <div class="flex justify-between">
+      <p class="font-medium">Email:</p>
+      <p>{{ object.email }}</p>
+    </div>
+
+    <div>
+      <p class="font-medium mb-1">Message:</p>
+      <div class="bg-gray-50 border border-gray-200 rounded p-3 text-gray-600">
+        {{ object.message }}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-6 flex justify-end space-x-3">
+    <a
+      href="#"
+      class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 transition"
+    >
+      Back
+    </a>
+    <button
+      class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+    >
+      Delete
+    </button>
+  </div>
+</div>
+
+{% endblock content %}

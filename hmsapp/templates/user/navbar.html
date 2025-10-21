@@ -1,0 +1,175 @@
+<!--navbar-->
+
+<nav class="bg-white w-full py-7 shadow-lg z-50 relative">
+  <div class="max-w-full mx-auto px-6 sm:px-8 lg:px-12">
+    <div class="relative flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0 flex items-center">
+        <span
+          class="font-bold uppercase text-violet-700 text-[20px] sm:text-[24px] md:text-[32px]"
+        >
+          VSM Multispeciality Hospital
+        </span>
+      </div>
+
+      <!-- Desktop menu -->
+      <div class="hidden sm:block sm:ml-6">
+        <ul class="flex space-x-4 font-medium items-center">
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Our Story
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Departments
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Health Packages
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Doctors
+            </a>
+          </li>
+          <li>
+            <a href="#" class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md text-[14px] md:text-[16px]">
+              Careers
+            </a>
+          </li>
+
+          <!-- More Info Dropdown -->
+          <li class="relative group">
+            <button
+              class="text-violet-700 hover:text-violet-800 px-3 py-2 rounded-md flex items-center text-[14px] md:text-[16px] transition duration-150"
+            >
+              More Info
+              <svg
+                class="ml-1 h-4 w-4 transition-transform duration-150 group-hover:rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </button>
+
+            <!-- Dropdown Menu -->
+            <ul
+              class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+            >
+              <li>
+                <a href="#" class="block px-4 py-2 text-violet-700 hover:bg-violet-50 hover:text-violet-800 text-[14px] md:text-[16px] transition">
+                  Insurance Partners
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-violet-700 hover:bg-violet-50 hover:text-violet-800 text-[14px] md:text-[16px] transition">
+                  Patient Guidelines
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-violet-700 hover:bg-violet-50 hover:text-violet-800 text-[14px] md:text-[16px] transition">
+                  Testimonials
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 text-violet-700 hover:bg-violet-50 hover:text-violet-800 text-[14px] md:text-[16px] transition">
+                  FAQs
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Right: Book Now button + mobile toggle -->
+      <div class="flex items-center gap-3">
+        <a href="#" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 text-sm font-medium transition">
+          Book Now
+        </a>
+
+        <!-- Mobile menu button -->
+        <div class="sm:hidden">
+          <button
+            id="mobile-menu-button"
+            type="button"
+            class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none transition"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="block h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="sm:hidden hidden" id="mobile-menu">
+    <div class="px-4 py-3 space-y-1">
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Home</a>
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Our Story</a>
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Departments</a>
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Health Packages</a>
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Doctors</a>
+      <a href="#" class="block px-3 py-2 text-violet-700 rounded-md hover:bg-violet-50 text-base font-medium">Careers</a>
+
+      <!-- Mobile Dropdown -->
+      <div class="relative">
+        <button
+          class="w-full text-left px-3 py-2 text-violet-700 rounded-md hover:bg-gray-100 text-base font-medium flex items-center justify-between mobile-dropdown-trigger"
+        >
+          More Info
+          <svg class="h-5 w-5 transition-transform duration-200" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <div class="hidden pl-4 py-2 mobile-dropdown-content">
+          <a href="#" class="block py-1 text-violet-700 hover:bg-violet-50 hover:text-violet-800 transition">Insurance Partners</a>
+          <a href="#" class="block py-1 text-violet-700 hover:bg-violet-50 hover:text-violet-800 transition">Patient Guidelines</a>
+          <a href="#" class="block py-1 text-violet-700 hover:bg-violet-50 hover:text-violet-800 transition">Testimonials</a>
+          <a href="#" class="block py-1 text-violet-700 hover:bg-violet-50 hover:text-violet-800 transition">FAQs</a>
+        </div>
+      </div>
+
+      <a href="#" class="block px-3 py-2 bg-violet-700 text-white rounded-md hover:bg-violet-800 text-base font-medium">Book Now</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  document.getElementById("mobile-menu-button").addEventListener("click", function () {
+    const mobileMenu = document.getElementById("mobile-menu");
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Mobile dropdown toggle
+  document.querySelectorAll(".mobile-dropdown-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", function () {
+      const content = this.nextElementSibling;
+      content.classList.toggle("hidden");
+    });
+  });
+</script>
