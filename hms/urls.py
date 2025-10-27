@@ -23,4 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('hmsapp.urls',namespace='hmsapp')),
     path('administrator/', include('administrator.urls',namespace='administrator')),
+    path('accounts/',include('accounts.urls',namespace="accounts")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
